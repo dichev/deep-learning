@@ -311,6 +311,7 @@ Clean code implementation of the foundational deep learning layers, optimizers a
             <img src="docs/images/shallow__mnist_classification.png" height="50" />
             <img src="docs/images/shallow__multiclass_classification.png" height="50" />
             <img src="docs/images/shallow__visualize_optimizers.png" height="50" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </td>
     </tr>
     <tr>
@@ -326,6 +327,7 @@ Clean code implementation of the foundational deep learning layers, optimizers a
             <img src="docs/images/energy_based__hopfield_network_memorize_letters.png" height="50" />
             <img src="docs/images/energy_based__hopfield_network_optimized_memorize_images.png" height="50" />
             <img src="docs/images/energy_based__restricted_boltzmann_memorize_images.png" height="50" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </td>
     </tr>
     <tr>
@@ -343,6 +345,7 @@ Clean code implementation of the foundational deep learning layers, optimizers a
             <img src="docs/images/recurrent__rnn_predict_next_char.png" height="50" />
             <img src="docs/images/recurrent__seq_to_seq_lstm.png" height="50" />
             <img src="docs/images/recurrent__word2vec.png" height="50" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </td>
     </tr>
     <tr>
@@ -358,6 +361,7 @@ Clean code implementation of the foundational deep learning layers, optimizers a
             <img src="docs/images/convolutional__cifar10_classification.png" height="50" />
             <img src="docs/images/convolutional__conv_viz_feature_maps.png" height="50" />
             <img src="docs/images/convolutional__conv_viz_saliency_maps.png" height="50" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </td>
     </tr>
     <tr>
@@ -371,6 +375,7 @@ Clean code implementation of the foundational deep learning layers, optimizers a
         <td>
             <img src="docs/images/graph__graph_to_graph_classification.png" height="50" />
             <img src="docs/images/graph__graph_to_node_classification_simple.png" height="50" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </td>
     </tr>
     <tr>
@@ -385,6 +390,7 @@ Clean code implementation of the foundational deep learning layers, optimizers a
             <img src="docs/images/attention__affine_mnist_spatial_transformer.png" height="50" />
             <img src="docs/images/attention__seq_to_seq_with_attention.png" height="50" />
             <img src="docs/images/attention__translated_mnist_attention_classification.png" height="50" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </td>
     </tr>
     <tr>
@@ -401,6 +407,7 @@ Clean code implementation of the foundational deep learning layers, optimizers a
             <img src="docs/images/transformers__reproduce_gpt.png" height="50" />
             <img src="docs/images/transformers__reproduce_gpt2.png" height="50" />
             <img src="docs/images/transformers__seq_to_seq_with_transformer.png" height="50" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </td>
     </tr>
     <tr>
@@ -412,6 +419,7 @@ Clean code implementation of the foundational deep learning layers, optimizers a
         </td>
         <td>
             <img src="docs/images/diffusion__generate_colored_mnist_diffusion.png" height="50" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </td>
     </tr>
 </table>
@@ -468,16 +476,25 @@ Clean code implementation of the foundational deep learning layers, optimizers a
 ## Installation
 ### Local Setup
 ```
-conda env create --name dev --file=./environment.yml
-conda activate dev
+conda env create --name deep --file=./environment.yml
+conda activate deep
 source .env
 ```
 ### Docker Setup
 ```
 docker build -t deep .
-docker run --rm --gpus all --name deep deep
+docker run --rm --gpus all -it --name deep deep
 docker exec -it deep bash
 
 # For debugging use:
 docker run -v .:/deep-learning --rm --gpus all --name deep deep
+```
+
+### Run examples
+```
+# List all examples
+find examples/ -name "*.py"
+
+# ALways run them from the project:
+python examples/attention/affine_mnist_spatial_transformer.py
 ```

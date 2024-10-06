@@ -78,6 +78,7 @@ Clean code implementation of the foundational deep learning layers, optimizers a
             {{#each images}}
             <img src="docs/images/{{this}}" height="50" />
             {{/each}}
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </td>
     </tr>
     {{/each}}
@@ -97,16 +98,25 @@ Clean code implementation of the foundational deep learning layers, optimizers a
 ## Installation
 ### Local Setup
 ```
-conda env create --name dev --file=./environment.yml
-conda activate dev
+conda env create --name deep --file=./environment.yml
+conda activate deep
 source .env
 ```
 ### Docker Setup
 ```
 docker build -t deep .
-docker run --rm --gpus all --name deep deep
+docker run --rm --gpus all -it --name deep deep
 docker exec -it deep bash
 
 # For debugging use:
 docker run -v .:/deep-learning --rm --gpus all --name deep deep
+```
+
+### Run examples
+```
+# List all examples
+find examples/ -name "*.py"
+
+# ALways run them from the project:
+python examples/attention/affine_mnist_spatial_transformer.py
 ```
