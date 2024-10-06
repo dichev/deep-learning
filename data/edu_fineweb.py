@@ -17,7 +17,7 @@ TOKENIZE_SCRIPT = './data/edu_fineweb_tokenize.py'
 class FineWebEduTokenizedDataset:
 
     def __init__(self, data_root=DATA_ROOT):
-        if not os.path.exists(data_root):
+        if not os.path.isdir(data_root) or not os.path.isfile(data_root + '/edufineweb_val_000000.npy'):
             self.download_and_tokenize()
 
         files = os.listdir(data_root)

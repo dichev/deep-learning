@@ -1,4 +1,4 @@
-name: pytorch2
+name: deep
 channels:
   - pytorch
   - nvidia
@@ -21,8 +21,6 @@ dependencies:
   - pytorch
   - pytorch-cuda=12.1
   - torchaudio
-  - torchdata
-  - torchtext
   - torchvision
   - datasets
   - pytorch_geometric
@@ -30,5 +28,4 @@ dependencies:
   - einops
   - tiktoken
   - pybars3
-  - pip:
-      torcheval
+  - sfe1ed40::torcheval

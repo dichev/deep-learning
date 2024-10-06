@@ -57,7 +57,7 @@ def validate_checkpoint_consistency(model, x):
             'optim': optim.state_dict()
         }, tmp_file)
         tmp_file.seek(0)
-        checkpoint = torch.load(tmp_file)  # cloned
+        checkpoint = torch.load(tmp_file, weights_only=False)  # cloned
 
     # do some training
     losses_A = train_loop(steps=10)
