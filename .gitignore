@@ -1,8 +1,11 @@
 *.pyc
 /.idea
+/.venv
 /runs**/
 /src/stuff/
+/.pytest_cache
 *.ignore*
+
 
 /data/*/
 !data/images/

@@ -473,28 +473,26 @@ Clean code implementation of the foundational deep learning layers, optimizers a
 
 <br>
 
+
 ## Installation
 ### Local Setup
 ```
-conda env create --name deep --file=./environment.yml
-conda activate deep
-source .env
-```
-### Docker Setup
-```
-docker build -t deep .
-docker run --rm --gpus all -it --name deep deep
-docker exec -it deep bash
-
-# For debugging use:
-docker run -v .:/deep-learning --rm --gpus all --name deep deep
+uv sync
 ```
 
 ### Run examples
 ```
-# List all examples
-find examples/ -name "*.py"
+# Load the env
+source .venv/Scripts/activate
 
-# ALways run them from the project:
-python examples/attention/affine_mnist_spatial_transformer.py
+# List all examples
+find examples/ -name "*.py" -printf "python -m %p\n" | sed 's|/|.|g; s|\.py$||'
+
+# Run an example:
+python -m examples.attention.affine_mnist_spatial_transformer
+```
+
+### Run tests
+```
+MPLBACKEND=Agg  pytest ./test
 ```
