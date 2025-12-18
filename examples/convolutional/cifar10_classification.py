@@ -35,7 +35,7 @@ test_dataset  = datasets.CIFAR10('./data/', download=True, train=False, transfor
 train_dataset, val_dataset = random_split(train_dataset, (len(train_dataset)-2000, 2000))
 
 train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
-val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=True)
+val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
 test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
 

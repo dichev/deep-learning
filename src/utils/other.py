@@ -71,7 +71,7 @@ def format_seconds(seconds):
 
 
 # Preserves public methods when compiling non-nn.Module objects
-def custom_compile(model, wrap_methods=[]):
+def custom_compile(model, wrap_methods):
     compiled = torch.compile(model)
     for method in wrap_methods:
         setattr(compiled, method, getattr(model, method))
